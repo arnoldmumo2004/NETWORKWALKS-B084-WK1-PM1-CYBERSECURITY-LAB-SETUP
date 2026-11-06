@@ -2,7 +2,7 @@
 
 ### Building an isolated virtual lab for penetration testing and ethical hacking practice
 
-![Lab Architecture](title%20image.png)
+![Lab Architecture](screenshots/title%20image.png)
 
 ---
 
@@ -21,7 +21,7 @@ The lab is configured on a private virtual network so that additional machines c
 The main objectives of this project are to:
 
 - Install and configure Oracle VirtualBox.
-- Install/import Kali Linux as a virtual machine.
+- Import Kali Linux as a virtual machine.
 - Create a private NAT Network for the cybersecurity lab.
 - Configure network connectivity for Kali Linux.
 - Assign a consistent IP address to the Kali VM.
@@ -49,7 +49,7 @@ The lab provides an isolated and controlled environment for cybersecurity learni
 - Security tool experimentation
 - Ethical hacking practice
 
-⚠️ **Important:** This laboratory must only be used for systems that you own or have explicit permission to test.
+⚠️ Important: This laboratory must only be used for systems that you own or have explicit permission to test.
 
 ---
 
@@ -83,7 +83,6 @@ Host Operating System (Windows 11)
 | Network Address | 10.0.0.0/24 |
 | Kali IP Address | 10.0.0.2/24 |
 | Gateway | 10.0.0.1 |
-| DNS Server | 10.0.0.1 |
 | Shared Clipboard | Bidirectional |
 | Drag & Drop | Bidirectional |
 | Shared Folder | Downloads Folder |
@@ -113,7 +112,7 @@ DHCP: Enabled
 
 ### Screenshot
 
-![NAT Network](Network%20settings.jpeg)
+![NAT Network](screenshots/Network%20settings.jpeg)
 
 ---
 
@@ -123,7 +122,7 @@ The official Kali Linux VirtualBox image was downloaded and imported successfull
 
 ### Screenshot
 
-![Kali Linux](Kali%20Linux%20Image.jpeg)
+![Kali Linux](screenshots/Kali%20Linux%20Image.jpeg)
 
 ---
 
@@ -137,12 +136,11 @@ Configuration:
 IP Address: 10.0.0.2
 Subnet Mask: /24
 Gateway: 10.0.0.1
-DNS Server: 10.0.0.1
 ```
 
 ### Screenshot
 
-![Kali Network Configuration](Kali%20Linux%20Network%20settings.jpeg)
+![Kali Network Settings](screenshots/Kali%20Linux%20Network%20settings.jpeg)
 
 ---
 
@@ -152,17 +150,19 @@ The following VirtualBox features were enabled:
 
 - Shared Clipboard (Bidirectional)
 - Drag and Drop (Bidirectional)
-- he Windows host machine and the Kali Linux virtual machine.
+- Shared Folder (Downloads Folder)
+
+These settings allow smooth interaction between the Windows host machine and the Kali Linux virtual machine.
 
 ---
 
 ## Step 6: Verify Internet Connectivity
 
-The Kali Linux virtual machine was tested for internet access and successful connectivity was confirmed.
+Internet connectivity was successfully verified.
 
 Verification included:
 
-- Accessing online resources
+- Accessing websites
 - DNS resolution
 - Network communication
 
@@ -198,11 +198,7 @@ This snapshot serves as a clean recovery point for future cybersecurity labs.
 | Shared Folder Configured | ✅ PASS |
 | Snapshot Created | ✅ PASS |
 
----
-
-# 📚 Skills Learned
-
-Through this project I gained practical experience in:
+-:
 
 - Virtualization Technology
 - Oracle VirtualBox Administration
@@ -244,7 +240,7 @@ The environment is now ready for future cybersecurity projects, penetration-test
 Bachelor of Science in Information Technology  
 University of Embu
 
-Interests:
+**Career Interests**
 - Cybersecurity
 - Network Administration & Management
 - IT Support
