@@ -2,7 +2,7 @@
 
 ### Building an isolated virtual lab for penetration testing and ethical hacking practice
 
-![Kali Linux Environment](Kali%20Linux%20Image.jpeg)
+![Lab Architecture](title%20image.png)
 
 ---
 
@@ -10,7 +10,7 @@
 
 This project focuses on setting up a virtual cybersecurity and penetration-testing laboratory using Oracle VirtualBox and Kali Linux.
 
-The purpose of this lab is to create a controlled environment where cybersecurity tools, network scanning, vulnerability assessment, reconnaissance, and other security-testing activities can be performed safely and repeatedly.
+The purpose of the lab is to create a controlled environment where cybersecurity tools, network scanning, reconnaissance, vulnerability assessment, and other security-testing activities can be performed safely and repeatedly.
 
 The lab is configured on a private virtual network so that additional machines can be added later and used as targets for authorized security testing.
 
@@ -21,13 +21,13 @@ The lab is configured on a private virtual network so that additional machines c
 The main objectives of this project are to:
 
 - Install and configure Oracle VirtualBox.
-- Import Kali Linux as a virtual machine.
+- Install/import Kali Linux as a virtual machine.
 - Create a private NAT Network for the cybersecurity lab.
 - Configure network connectivity for Kali Linux.
 - Assign a consistent IP address to the Kali VM.
 - Verify network connectivity and DNS resolution.
 - Enable shared clipboard and drag-and-drop functionality.
-- Configure shared folders between the host and virtual machine.
+- Configure shared folders.
 - Take a clean VM snapshot for recovery.
 - Document the complete setup process.
 - Prepare the environment for future cybersecurity projects.
@@ -38,16 +38,16 @@ The main objectives of this project are to:
 
 The lab provides an isolated and controlled environment for cybersecurity learning and authorized security testing.
 
-It can be used for activities such as:
+### It can be used for activities such as:
 
 - Network reconnaissance
 - Port scanning
 - Vulnerability assessment
 - Packet analysis
 - Web security testing
-- Exploitation practice
-- Security-tool experimentation
 - Linux administration
+- Security tool experimentation
+- Ethical hacking practice
 
 ⚠️ **Important:** This laboratory must only be used for systems that you own or have explicit permission to test.
 
@@ -67,10 +67,8 @@ Host Operating System (Windows 11)
           │
           │
     Kali Linux VM
-      10.0.0.2
+      10.0.0.2/24
 ```
-
-Additional target machines can be added later for cybersecurity practice and penetration testing exercises.
 
 ---
 
@@ -85,8 +83,9 @@ Additional target machines can be added later for cybersecurity practice and pen
 | Network Address | 10.0.0.0/24 |
 | Kali IP Address | 10.0.0.2/24 |
 | Gateway | 10.0.0.1 |
+| DNS Server | 10.0.0.1 |
 | Shared Clipboard | Bidirectional |
-| Drag and Drop | Bidirectional |
+| Drag & Drop | Bidirectional |
 | Shared Folder | Downloads Folder |
 | Snapshot | Week1_Fresh_Kali_Lab |
 
@@ -96,13 +95,15 @@ Additional target machines can be added later for cybersecurity practice and pen
 
 ## Step 1: Install Oracle VirtualBox
 
-Oracle VirtualBox was installed successfully on the host machine and configured as the virtualization platform.
+Oracle VirtualBox was installed successfully and configured as the virtualization platform used throughout this project.
 
 ---
 
 ## Step 2: Create NAT Network
 
-A dedicated NAT Network was created using the following settings:
+A dedicated NAT Network was created in VirtualBox.
+
+Configuration:
 
 ```text
 Network Name: NatNetwork
@@ -112,23 +113,23 @@ DHCP: Enabled
 
 ### Screenshot
 
-![NAT Network Configuration](Network%20settings.jpeg)
+![NAT Network](Network%20settings.jpeg)
 
 ---
 
-## Step 3: Import Kali Linux Virtual Machine
+## Step 3: Import Kali Linux
 
 The official Kali Linux VirtualBox image was downloaded and imported successfully into Oracle VirtualBox.
 
 ### Screenshot
 
-![Kali Linux VM](Kali%20Linux%20Image.jpeg)
+![Kali Linux](Kali%20Linux%20Image.jpeg)
 
 ---
 
-## Step 4: Configure Kali Linux Networking
+## Step 4: Configure the Kali Linux Network
 
-The network adapter was configured with a static IP address.
+The Kali Linux network settings were configured manually with a static IP address.
 
 Configuration:
 
@@ -136,46 +137,42 @@ Configuration:
 IP Address: 10.0.0.2
 Subnet Mask: /24
 Gateway: 10.0.0.1
+DNS Server: 10.0.0.1
 ```
 
 ### Screenshot
 
-![Network Configuration](Kali%20Linux%20Network%20settings.jpeg)
+![Kali Network Configuration](Kali%20Linux%20Network%20settings.jpeg)
 
 ---
 
-## Step 5: Configure Shared Resources
+## Step 5: Enable Shared Resources
 
-The following features were enabled:
+The following VirtualBox features were enabled:
 
 - Shared Clipboard (Bidirectional)
 - Drag and Drop (Bidirectional)
-- Shared Folder (Downloads Folder)
-
-These settings allow file and data sharing between the host machine and Kali Linux VM.
+- he Windows host machine and the Kali Linux virtual machine.
 
 ---
 
 ## Step 6: Verify Internet Connectivity
 
-Internet connectivity was successfully verified.
+The Kali Linux virtual machine was tested for internet access and successful connectivity was confirmed.
 
 Verification included:
 
-- Accessing websites
-- Updating repositories
-- DNS resolution tests
-- General network connectivity checks
+- Accessing online resources
+- DNS resolution
+- Network communication
 
-Result:
-
-✅ Internet Connectivity Successful
+✅ Internet connectivity successfully verified.
 
 ---
 
-## Step 7: Create VM Snapshot
+## Step 7: Create Snapshot
 
-A recovery snapshot was created after completing the configuration.
+A recovery snapshot was created after completing all configurations.
 
 Snapshot Name:
 
@@ -183,19 +180,19 @@ Snapshot Name:
 Week1_Fresh_Kali_Lab
 ```
 
-The snapshot can be restored if future lab activities affect the VM.
+This snapshot serves as a clean recovery point for future cybersecurity labs.
 
 ---
 
-# 🔎 Lab Verification
+# 🔍 Lab Verification
 
-| Test | Status |
+| Test | Result |
 |--------|---------|
 | VirtualBox Installed | ✅ PASS |
 | NAT Network Created | ✅ PASS |
 | Kali Linux Imported | ✅ PASS |
 | Static IP Configured | ✅ PASS |
-| Internet Connectivity | ✅ PASS |
+| Internet Connectivity Verified | ✅ PASS |
 | Shared Clipboard Enabled | ✅ PASS |
 | Drag and Drop Enabled | ✅ PASS |
 | Shared Folder Configured | ✅ PASS |
@@ -209,10 +206,14 @@ Through this project I gained practical experience in:
 
 - Virtualization Technology
 - Oracle VirtualBox Administration
-- Kali Linux Setup
+- Kali Linux Setup and Configuration
 - Virtual Networking
 - NAT Network Configuration
-- Linuxtual Environments
+- Linux Networking
+- IP Addressing
+- Cybersecurity Lab Design
+- VM Snapshot Management
+- Troubleshooting Virtual Environments
 
 ---
 
@@ -224,7 +225,7 @@ Initial Kali Linux installation using an ISO image failed during the software in
 
 ## Solution
 
-The official Kali Linux VirtualBox image was downloaded and imported successfully, eliminating the need for manual installation.
+The issue was resolved by using the official Kali Linux VirtualBox image, which provided a pre-configured and stable environment for the lab setup.
 
 ---
 
@@ -232,15 +233,20 @@ The official Kali Linux VirtualBox image was downloaded and imported successfull
 
 The cybersecurity laboratory environment was successfully created using Oracle VirtualBox and Kali Linux.
 
-The lab now provides a safe and controlled environment for future activities in cybersecurity, ethical hacking, vulnerability assessment, penetration testing, and network security studies as part of the NetworkWalks Cybersecurity Internship Program.
+The environment is now ready for future cybersecurity projects, penetration-testing exercises, vulnerability assessments, and ethical hacking activities as part of the NetworkWalks Cybersecurity Internship Program.
 
 ---
 
-## 👨‍💻 Author
+# 👨‍💻 Author
 
 **Arnold Mumo Kilonzo**
 
-BSc Information Technology Student  
+Bachelor of Science in Information Technology  
 University of Embu
 
-Cybersecurity | Network Administration | IT Support | Generative AI
+Interests:
+- Cybersecurity
+- Network Administration & Management
+- IT Support
+- Generative AI
+- Prompt Engineering
